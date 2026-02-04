@@ -1,8 +1,11 @@
 # Claude Code Power Pack
 
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](https://github.com/leekee0905/claude-config)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](https://github.com/leekee0905/claude-config)
+[![Based on](https://img.shields.io/badge/based%20on-jh941213%2Fmy--claude--code--asset-orange.svg)](https://github.com/jh941213/my-claude-code-asset)
 
 Boris Cherny(Claude Code 창시자) 팁 + skills.sh 해커톤 우승작 기반 **올인원 플러그인**
+
+> **원본 출처**: 이 설정은 [jh941213/my-claude-code-asset](https://github.com/jh941213/my-claude-code-asset)을 기반으로 커스터마이징되었습니다.
 
 ## 설치
 
