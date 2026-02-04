@@ -1,12 +1,12 @@
 {
   "name": "ccpp",
-  "description": "Boris Cherny 팁 + 해커톤 우승 스킬 기반 올인원 Claude Code 플러그인. 29개 스킬, 8개 에이전트.",
-  "version": "0.3.0",
+  "description": "Boris Cherny 팁 + 해커톤 우승 스킬 기반 올인원 Claude Code 플러그인. 31개 스킬, 9개 에이전트.",
+  "version": "0.4.0",
   "author": {
     "name": "Community Contributors"
   },
-  "homepage": "https://github.com/jh941213/my-claude-code-asset",
-  "repository": "https://github.com/jh941213/my-claude-code-asset",
+  "homepage": "https://github.com/leekee0905/claude-config",
+  "repository": "https://github.com/leekee0905/claude-config",
   "license": "MIT",
   "keywords": [
     "boris-cherny",
@@ -17,7 +17,9 @@
     "code-review",
     "tdd",
     "skills-sh",
-    "all-in-one"
+    "all-in-one",
+    "parallel-analysis",
+    "git-worktree"
   ],
   "skills": "./skills/"
 }

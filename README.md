@@ -1,6 +1,6 @@
 # Claude Code Power Pack
 
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](https://github.com/jh941213/my-claude-code-asset)
+[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](https://github.com/leekee0905/claude-config)
 
 Boris Cherny(Claude Code 창시자) 팁 + skills.sh 해커톤 우승작 기반 **올인원 플러그인**
 
@@ -10,8 +10,8 @@ Boris Cherny(Claude Code 창시자) 팁 + skills.sh 해커톤 우승작 기반 *
 
 ```bash
 # 터미널에서 실행
-claude plugin marketplace add jh941213/my-claude-code-asset
-claude plugin install ccpp@my-claude-code-asset
+claude plugin marketplace add leekee0905/claude-config
+claude plugin install ccpp@claude-config
 ```
 
 > **Note**: 플러그인 시스템은 **skills만** 지원합니다. 에이전트와 rules는 별도 설정이 필요합니다.
@@ -21,27 +21,27 @@ claude plugin install ccpp@my-claude-code-asset
 Claude Code 세션에서 아래 프롬프트 입력:
 
 ```
-https://github.com/jh941213/my-claude-code-asset 저장소의 agents/, rules/, CLAUDE.md를
+https://github.com/leekee0905/claude-config 저장소의 agents/, rules/, CLAUDE.md를
 내 ~/.claude/ 폴더에 반영해줘
 ```
 
 또는 install.sh 스크립트 실행:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jh941213/my-claude-code-asset/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/leekee0905/claude-config/main/install.sh | bash
 ```
 
 ### 설치 항목 비교
 
 | 항목 | 플러그인 설치 | 전체 설정 |
 |------|:------------:|:--------:|
-| Skills (29개) | ✅ | ✅ |
-| Agents (8개) | ❌ | ✅ |
+| Skills (31개) | ✅ | ✅ |
+| Agents (9개) | ❌ | ✅ |
 | Rules (5개) | ❌ | ✅ |
 | CLAUDE.md | ❌ | ✅ |
 | settings.json | ❌ | ✅ |
 
-## 포함된 스킬 (29개)
+## 포함된 스킬 (31개)
 
 ### 워크플로우 스킬 (13개)
 
@@ -92,7 +92,7 @@ curl -fsSL https://raw.githubusercontent.com/jh941213/my-claude-code-asset/main/
 |------|------|
 | `/ccpp:nano-banana` | Gemini CLI로 이미지 생성/편집 (썸네일, 아이콘, 다이어그램 등) |
 
-## 포함된 에이전트 (8개)
+## 포함된 에이전트 (9개)
 
 > **Note**: 에이전트는 플러그인으로 설치되지 않습니다. `~/.claude/agents/`에 직접 복사하거나, Claude에게 저장소 반영을 요청하세요.
 
@@ -106,12 +106,13 @@ curl -fsSL https://raw.githubusercontent.com/jh941213/my-claude-code-asset/main/
 | `architect` | 시스템 아키텍처 설계 |
 | `security-reviewer` | 보안 취약점 분석 |
 | `tdd-guide` | TDD 방식 안내 |
+| `parallel-analyzer` | 병렬 코드 분석 오케스트레이터 |
 
 **수동 설치:**
 ```bash
 # agents 폴더 복사
-curl -fsSL https://github.com/jh941213/my-claude-code-asset/archive/main.tar.gz | tar -xz -C /tmp
-cp /tmp/my-claude-code-asset-main/agents/*.md ~/.claude/agents/
+curl -fsSL https://github.com/leekee0905/claude-config/archive/main.tar.gz | tar -xz -C /tmp
+cp /tmp/claude-config-main/agents/*.md ~/.claude/agents/
 ```
 
 ## 포함된 Rules (5개)
@@ -128,7 +129,7 @@ cp /tmp/my-claude-code-asset-main/agents/*.md ~/.claude/agents/
 
 **수동 설치:**
 ```bash
-cp /tmp/my-claude-code-asset-main/rules/*.md ~/.claude/rules/
+cp /tmp/claude-config-main/rules/*.md ~/.claude/rules/
 ```
 
 ## Boris Cherny 팁 (Claude Code 창시자)

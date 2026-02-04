@@ -43,7 +43,7 @@ Shift+Tab → Plan 모드 토글
 → /handoff (HANDOFF.md 생성) → /clear → 새 세션
 ```
 
-## 워크플로우 스킬 (13개)
+## 워크플로우 스킬 (15개)
 | 스킬 | 용도 |
 |------|------|
 | `/plan` | 작업 계획 수립 |
@@ -59,8 +59,10 @@ Shift+Tab → Plan 모드 토글
 | `/handoff` | HANDOFF.md 생성 |
 | `/compact-guide` | 컨텍스트 관리 가이드 |
 | `/techdebt` | 기술 부채 정리 |
+| `/analyze-parallel` | 병렬 에이전트 코드 분석 |
+| `/worktree` | git worktree 병렬 작업 설정 |
 
-## 에이전트 (6개)
+## 에이전트 (9개)
 | 에이전트 | 용도 |
 |----------|------|
 | `planner` | 복잡한 기능 계획 |
@@ -69,6 +71,9 @@ Shift+Tab → Plan 모드 토글
 | `architect` | 아키텍처 설계 |
 | `security-reviewer` | 보안 취약점 분석 |
 | `tdd-guide` | TDD 방식 안내 |
+| `junior-mentor` | 주니어 학습 멘토 |
+| `stitch-developer` | Stitch UI 전문가 |
+| `parallel-analyzer` | 병렬 코드 분석 오케스트레이터 |
 
 ## 기술 스킬 (10개)
 
@@ -93,15 +98,47 @@ Shift+Tab → Plan 모드 토글
 ## 고급 활용법
 
 ### 병렬 작업 (git worktree)
+
+**스킬 사용:**
+```
+/worktree create feat-login         # feature/feat-login worktree 생성
+/worktree create fix-bug hotfix     # hotfix/fix-bug worktree 생성
+/worktree cleanup                   # 정리
+```
+
+**수동 설정:**
 ```bash
 git worktree add ../project-feat -b feature/login
 git worktree add ../project-fix -b fix/bug
 # 각 터미널에서 claude 실행
 ```
 
-### 서브에이전트 활용
+**병렬 작업 패턴:**
+- Feature + Hotfix 동시 진행
+- 여러 Feature 동시 개발
+- PR 리뷰 + 개발 동시 진행
+
+### 병렬 에이전트 코드 분석
+
+**분야별 병렬 분석:**
 ```
-"use subagents를 사용해서 병렬로 처리해줘"
+"use subagents를 사용해서 이 코드베이스를 병렬로 분석해줘:
+- architect: 전체 아키텍처 분석
+- security-reviewer: 보안 취약점 검사
+- code-reviewer: 코드 품질 리뷰"
+```
+
+**구역별 병렬 분석 (대규모 프로젝트):**
+```
+"use subagents를 사용해서 병렬로 분석해줘:
+- 에이전트 1: src/api/ 폴더 분석
+- 에이전트 2: src/components/ 폴더 분석
+- 에이전트 3: src/utils/ 폴더 분석"
+```
+
+**또는 스킬 사용:**
+```
+/analyze-parallel
 ```
 
 ### 검토 강화 프롬프트

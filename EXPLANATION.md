@@ -171,15 +171,97 @@ rules/
 
 ### 플러그인 설치 흐름
 ```
-1. claude plugin marketplace add jh941213/my-claude-code-asset
+1. claude plugin marketplace add leekee0905/claude-config
    └→ GitHub에서 저장소 정보 다운로드
 
-2. claude plugin install ccpp@my-claude-code-asset
+2. claude plugin install ccpp@claude-config
    └→ skills/ 폴더의 모든 스킬이 사용 가능해짐
 
 3. Claude Code 재시작
    └→ /ccpp:plan, /ccpp:verify 등 사용 가능!
 ```
+
+---
+
+## 🚀 병렬 에이전트 코드 분석
+
+### 개념 이해
+**비유:** 큰 프로젝트를 검사할 때, 한 명이 순서대로 하는 것보다 **여러 전문가가 동시에** 각자 분야를 검사하면 훨씬 빠르죠!
+
+예를 들어 집을 검사할 때:
+- 👷 건축가 → 구조 확인
+- 🔒 보안 전문가 → 잠금장치 확인
+- 🔌 전기 기사 → 배선 확인
+- 🎨 인테리어 전문가 → 디자인 확인
+
+이걸 **동시에** 진행하면 시간이 1/4로 줄어요!
+
+### 시각 자료
+
+```mermaid
+flowchart LR
+    subgraph Input
+        A[📁 코드베이스]
+    end
+
+    subgraph Parallel["⚡ 병렬 분석"]
+        B[🏛️ architect<br/>전체 구조]
+        C[🔒 security-reviewer<br/>보안 취약점]
+        D[📋 code-reviewer<br/>코드 품질]
+        E[🎨 frontend-developer<br/>UI/UX]
+    end
+
+    subgraph Output
+        F[📊 분석 리포트]
+    end
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    B --> F
+    C --> F
+    D --> F
+    E --> F
+```
+
+> 순차 분석 vs 병렬 분석 비교!
+> 여러 에이전트가 **동시에** 각자 영역을 분석하면 전체 시간이 획기적으로 단축됩니다.
+
+### 분야별 에이전트 역할 분담
+| 에이전트 | 담당 분야 | 검사 내용 |
+|----------|-----------|-----------|
+| `architect` | 전체 구조 | 아키텍처 패턴, 의존성, 설계 |
+| `security-reviewer` | 보안 | XSS, SQL 인젝션, 인증 취약점 |
+| `code-reviewer` | 코드 품질 | 가독성, 중복, 에러 처리 |
+| `frontend-developer` | UI/UX | 컴포넌트 구조, 성능, 접근성 |
+
+### 실제 사용법
+
+**분야별 병렬 분석:**
+```
+"use subagents를 사용해서 이 코드베이스를 병렬로 분석해줘:
+- architect: 전체 아키텍처 분석
+- security-reviewer: 보안 취약점 검사
+- code-reviewer: 코드 품질 리뷰"
+```
+
+**구역별 병렬 분석 (대규모 프로젝트):**
+```
+"use subagents를 사용해서 병렬로 분석해줘:
+- 에이전트 1: src/api/ 폴더 분석
+- 에이전트 2: src/components/ 폴더 분석
+- 에이전트 3: src/utils/ 폴더 분석"
+```
+
+### 왜 빠를까요?
+
+| 방식 | 3개 영역 분석 시간 |
+|------|-------------------|
+| 순차 분석 | ⏱️⏱️⏱️ (3배) |
+| 병렬 분석 | ⏱️ (1배) |
+
+각 에이전트가 **독립적으로 동시 실행**되기 때문에 가장 오래 걸리는 작업 시간만큼만 소요돼요!
 
 ---
 
@@ -189,7 +271,7 @@ rules/
 
 ```bash
 # ❌ 플러그인만 설치하면 agents, rules는 안 깔려요!
-claude plugin install ccpp@my-claude-code-asset
+claude plugin install ccpp@claude-config
 
 # ✅ agents, rules도 필요하면 따로 복사해야 해요
 curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
@@ -211,11 +293,11 @@ claude plugin install ...
 
 ```bash
 # ❌ 바로 설치하려고 하면 에러!
-claude plugin install ccpp@my-claude-code-asset
+claude plugin install ccpp@claude-config
 
 # ✅ 먼저 마켓플레이스 추가해야 해요
-claude plugin marketplace add jh941213/my-claude-code-asset
-claude plugin install ccpp@my-claude-code-asset
+claude plugin marketplace add leekee0905/claude-config
+claude plugin install ccpp@claude-config
 ```
 
 ---

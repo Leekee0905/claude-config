@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Claude Code Configuration Installer
-# https://github.com/jh941213/my-claude-code-asset
+# https://github.com/leekee0905/claude-config
 
 set -e
 
@@ -9,7 +9,7 @@ echo "🚀 Claude Code Power Pack 설치 시작..."
 
 # 임시 디렉토리에 클론
 TEMP_DIR=$(mktemp -d)
-git clone --depth 1 https://github.com/jh941213/my-claude-code-asset.git "$TEMP_DIR"
+git clone --depth 1 https://github.com/leekee0905/claude-config.git "$TEMP_DIR"
 
 # ~/.claude 디렉토리 생성
 mkdir -p ~/.claude/agents ~/.claude/skills ~/.claude/rules
@@ -58,18 +58,19 @@ echo ""
 echo "📋 설치된 항목:"
 echo "   - CLAUDE.md (전역 설정)"
 echo "   - settings.json (권한/Hooks)"
-echo "   - agents/ (6개 에이전트)"
-echo "   - skills/ (23개 스킬)"
+echo "   - agents/ (9개 에이전트)"
+echo "   - skills/ (31개 스킬)"
 echo "   - rules/ (5개 규칙)"
 echo ""
 echo "🎯 사용 가능한 워크플로우 스킬:"
 echo "   /plan, /spec, /spec-verify, /frontend, /verify"
 echo "   /commit-push-pr, /review, /simplify, /tdd"
 echo "   /build-fix, /handoff, /compact-guide, /techdebt"
+echo "   /analyze-parallel, /worktree"
 echo ""
 echo "💡 플러그인 방식 설치 (권장):"
-echo "   claude plugin marketplace add jh941213/my-claude-code-asset"
-echo "   claude plugin install ccpp@my-claude-code-asset"
+echo "   claude plugin marketplace add leekee0905/claude-config"
+echo "   claude plugin install ccpp@claude-config"
 echo ""
 echo "💡 터미널 alias 추가하려면:"
 echo '   echo '\''alias c="claude"'\'' >> ~/.zshrc && source ~/.zshrc'
